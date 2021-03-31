@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "80df6d3d-3df0-4932-b275-805acefc7fc7",
+		"name": "spaCyAPI",
+		"description": "Test calls for the spaCy API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Parse Text",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"text\": \"The Quick Brown Fox died in a car crash.\",\n  \"model\": \"en\",\n  \"collapse_punctuation\": 0,\n  \"collapse_phrases\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/dep",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"dep"
+					]
+				},
+				"description": "Analyze, tokenize and parse some test"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "d376ba50-6592-4108-8c76-05af743ed19e",
+			"key": "host",
+			"value": "localhost:8080",
+			"type": "string"
+		},
+		{
+			"id": "edce6f30-7ad7-470f-ba22-ba2407532cde",
+			"key": "port",
+			"value": "8080",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
